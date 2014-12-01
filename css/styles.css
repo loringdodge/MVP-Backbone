@@ -1,0 +1,33 @@
+body, html { margin:0; padding:0; font-family: 'Alegreya Sans', sans-serif;}
+a { text-decoration: none; }
+
+#header { position:relative; width:100%; height:50px; background-color:#333; }
+#header .left-nav { float:left; margin: 14px 0 0 20px;}
+#header .left-nav a { margin: 0 15px 0 0; color: #FFF; font-size: 15px; text-transform: uppercase; display:inline-block;}
+#header .left-nav a:hover { color: #F35386; } 
+#header .right-nav { float:right; margin: 14px 20px 0 0px; }
+#header .right-nav a { margin: 0 0 0 15px; color: #FFF; font-size: 15px; text-transform: uppercase; display:inline-block;}
+#header .right-nav a:hover { color: #F35386; } 
+#header .soundcloud { float: right; margin: -20px 20px 0 0; } 
+
+#main { width:100%; height:700px; background-color:#F4F4F4 }
+.music-box { float:left; position:relative; background-color:#D6D6D6;}
+.music-box.small { margin:5px 0 0 5px; width:200px; height:200px; }
+.music-box.big { margin: 5px 0 0 5px; width:610px; height:405px; }
+.music-box .overlay { width: 100%; height: 100%; background-color: #333; opacity: 0; filter:alpha(opacity=0); transition: opacity .2s ease-out; -moz-transition: opacity .2s ease-out; -webkit-transition: opacity .2s ease-out; -o-transition: opacity .2s ease-out;  }
+.music-box:hover .overlay { opacity: 0.7; filter:alpha(opacity=70); }
+.music-box .banner { position:absolute; top: 0; right: 0; width:0;height:0; background-color:transparent; border-top:120px solid #F35386; border-left:120px solid transparent; }
+.music-box .banner .text { position:absolute; top: -98px; right: 3px; color: #FFF; font-size: 22px; font-weight: 700; text-align: center; text-transform: uppercase; line-height: 75%; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); }
+.music-box .banner .text span { font-size: 12px; }
+.music-box .bottom { position: absolute; bottom:0; left: 0; width: 100%; height: 50px; color:#FFF; background-color:#333; }
+.music-box .bottom .ranking { float:left; padding:8px 0 0 12px; width: 30px; font-family: 'Wire One', sans-serif; font-size: 30px; }
+.music-box .bottom .song { float:left; margin:5px 0 0 0; width:130px; font-weight:500; }
+.music-box .bottom .band { float:left; width:130px; font-weight:100; }
+.music-box.big .bottom .song { margin:12px 0 0 0; width:auto; font-size:20px; }
+.music-box.big .bottom .band{ margin:12px 0 0 10px; width:auto; font-size:20px; }
+.music-box .bottom .dropdown { width: 40px; }
+
+#footer { position:fixed; bottom: 0; left: 0; width:100%; height:130px; background-color:#FFF; box-shadow: -1px -1px 2px #CCC; }
+#footer .player-bar { width: 100%; height: 8px; background-color: #F35386; visibility: hidden}
+#footer .logo { float:left; width: 200px; display:block;}
+#footer .player { float:right; }
