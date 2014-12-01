@@ -1,4 +1,4 @@
-# Project Name #
+# We Are Hunted (reborn) #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -18,29 +18,46 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  
+  > We Are Hunted (reborn) but unaffiliated with anybody even remotely connected with the original site.
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  
+  > For people that loved We Are Hunted and for those only searching for a music discovery platform.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  
+  > We Are Hunted was a music discovery website featuring artist collections aggregated from music blogs around the world. The site was bought by Twitter in 2013 and rebranded as Twitter Music. Within a year, the site was shutdown reducing underground music enthusiasts to tears.
 
 ## Problem ##
   > Describe the problem your product solves.
+  
+    > The problem is that music discovery is hard and takes hours of scouring blogs to find great unheard artists. We Are Hunted filled the disconnect between enthusiasts and low-key artists and there remain few alternatives.
+
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  
+   > We Are Hunted (reborn) is a reconstruction of the original website with most of the original features beloved by visitors.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  
   > "I cried the day I went to wearehunted.com and it was shutdown."
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  
+  > Start using We Are Hunted just like you would have in the good ole' days. 
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  
   > "I've scoured the internet for music discovery blogs/sites but nothing compared to We Are Hunted. I feel complete again"
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  
+  > Start discovering music again.
