@@ -33,12 +33,14 @@ Once the project moves into development, the press release can be used as a touc
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  "I cried the day I went to wearehunted.com and it was shutdown."
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  "I've scoured the internet for music discovery blogs/sites but nothing compared to We Are Hunted. I feel complete again"
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
