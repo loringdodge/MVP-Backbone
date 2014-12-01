@@ -1,60 +1,76 @@
-var arrangeBoxes() = function() {
-  // Pseudocode for getting we are hunted layout 
+var main = $('#main');
+var header = $('#header');
+var footer = $('#footer');
 
-  var main = $('#main');
-  var header = $('#header');
-  var footer = $('#footer');
+var getWindowSize = function() {
+  var width = $(window).width();
+  var height = $(window).height();
+  var headerHeight = header.height();
+  var footerHeight = footer.height();
+  return {
+    width : width,
+    height : height - (headerHeight + footerHeight)
+  }
+}
 
-  // an array of song objects from soundcloud
-  var songs = [{
+var songs = [
+  {
     link : 'www.soundcloud.com',
-    name : 'Firework',
+    title : 'Firework',
     artist : 'Katy Perry'
-  }];
-    // contains
-      // links
-      // song name
-      // artist
+  },
+  {
+    link : 'www.soundcloud.com',
+    title : 'Firework',
+    artist : 'Katy Perry'
+  },
+  {
+    link : 'www.soundcloud.com',
+    title : 'Firework',
+    artist : 'Katy Perry'
+  },
+  {
+    link : 'www.soundcloud.com',
+    title : 'Firework',
+    artist : 'Katy Perry'
+  },
+];
 
-  var template = _.template('');
-  // set up a template
-    // small
-    // big
+var smallBoxDimensions = {
+  width : 205,
+  height : 205
+}
+
+var bigBoxDimensions = {
+  width : 615,
+  height : 410
+}
+
+var makeBox = function(song) {
+  return $('<div class="music-box small"><div class="overlay"><div class="player-status"><img src="img/pause.png" /></div></div><div class="bottom"><div class="ranking">' + song.ranking + '</div><div class="song">' + song.artist + '</div><div class="band">' + song.title + '</div><div class="dropdown"></div></div></div>');
+};
+
+var isWithinConstraints = function(first, second) {
+  return first < second;
+}
 
 
-  var smallBoxDimensions = {
-    width : 205,
-    height : 205
-  }
 
-  var bigBoxDimensions = {
-    width : 615,
-    height : 410
-  }
+
+var arrangeBoxes = function() {
 
   var topPosition = 0;
   var leftPosition = 0;
 
   var windowSize = getWindowSize();
 
-  var getWindowSize = function() {
-    var width = $(window).width();
-    var height = $(window).height();
-    var headerHeight = header.height();
-    var footerHeight = footer.height();
-    return {
-      width : width,
-      height : height - (headerHeight + footerHeight)
-    }
-  }
+  // var isGoodOnTop = function(box) {
+  //   return box.height + topPosition < windowSize.height;
+  // }
 
-  var isGoodOnTop = function(box) {
-    return box.height + topPosition < windowSize.height;
-  }
-
-  var isGoodOnLeft = function(box) {
-    return box.width + leftPosition < windowSize.width;
-  }
+  // var isGoodOnLeft = function(box) {
+  //   return box.width + leftPosition < windowSize.width;
+  // }
 
   var setPosition = function(){
 
