@@ -25,7 +25,7 @@
   }
 
   var smallBoxTemplate = function(song, style) {
-    return '<div class="music-box small" style="position: absolute; top:' + style.top + 'px; left:' + style.left + 'px"><div class="overlay"><div class="player-status"><img src="img/play.png" /></div></div><div class="bottom"><div class="ranking">' + song.ranking + '</div><div class="song">' + song.artist + '</div><div class="band">' + song.title + '</div><div class="dropdown"></div></div></div>';
+    return '<div class="music-box small" style="position: absolute; top:' + style.top + 'px; left:' + style.left + 'px"><div class="overlay"><div class="player-status"><img src="img/play.png" /></div></div><div class="bottom"><div class="ranking">' + song.release_day + '</div><div class="song">' + song.user.username + '</div><div class="band">' + song.title + '</div><div class="dropdown"></div></div></div>';
   };
 
   var bigBoxTemplate = function(song, style) {
@@ -37,31 +37,19 @@
   }
 
   var getSongs = function() {
-    $.ajax({
-      type: "POST",
-      url: "some.php",
-      data: { name: "John", location: "Boston" }
-    })
-      .done(function( msg ) {
-        alert( "Data Saved: " + msg );
-      });
+    var apiKey = 'htuiRd1JP11Ww0X72T1C3g';
+    var url = 'http://api.soundcloud.com/resolve.json?url=https://soundcloud.com/loringdodge/sets/wearehunted&client_id=' + apiKey;
+    $.getJSON(url, function(songs) {
+      console.log(songs.tracks);
+      arrangeBoxes(songs.tracks);
+      slideEffect();
+    });
   }
 
 
 
 
-  var arrangeBoxes = function() {
-
-    var songs = [];
-
-    for(var i = 0; i < 100; i++){
-      songs.push({
-        link : 'www.soundcloud.com',
-        title : 'Firework',
-        artist : 'Katy Perry',
-        ranking : (i + 1)
-      });
-    }
+  var arrangeBoxes = function(songs) {
 
     var containerHeight = container.height();
     var windowWidth = $(window).width();
@@ -138,8 +126,6 @@
 
   var slideEffect = function() {
 
-    arrangeBoxes();
-
     var containerWidth = container.outerWidth();
     var containerHeight = container.height();
 
@@ -202,7 +188,7 @@
 
   }
 
-slideEffect();
+// slideEffect();
 
   // // Slide Effect
 

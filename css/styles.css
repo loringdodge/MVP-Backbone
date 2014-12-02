@@ -36,7 +36,7 @@ a { text-decoration: none; }
 /*************** FOOTER ***************/
 #footer { position:fixed; bottom: 0; left: 0; width:100%; height:130px; background-color:#FFF; box-shadow: -1px -1px 2px #CCC; }
 #footer .player-bar { width: 56%; height: 8px; background-color: #F35386;}
-#footer .logo { float:left; width: 200px; display:block;}
+#footer .logo { float:left; margin-top: -50px; width: 200px; display:block;}
 #footer .player { float:right; width: 500px; }
 #footer .player .song { float:left; margin-left: 10px;}
 #footer .player .artist { float:left; }
