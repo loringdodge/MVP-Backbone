@@ -167,6 +167,9 @@
     });
 
     $leftBar.hover(function(){
+        if(container.offset().left === 0) {
+          $leftBar.css('visibility', 'hidden');
+        }
       if(isWithinConstraints(container.offset().left, 0)) {
         container.stop().animate({ left: 0 }, getSpeed(Math.abs(container.offset().left - 0) , 0.5), "linear");
       }
@@ -175,6 +178,9 @@
     });
 
     $rightBar.hover(function(){
+        if(container.offset().left < 0) {
+          $leftBar.css('visibility', 'visible');
+        }
       if(isWithinConstraints(windowWidth, rightPosition)) {
         container.stop().animate({ left: (windowWidth - containerWidth) }, getSpeed(Math.abs(windowWidth - rightPosition) , 0.5), "linear")
       }
