@@ -49,6 +49,8 @@
 
 .sc-player .sc-controls a {
   color: transparent;
+  border:5px solid #F35386;
+  border-radius: 50%;
   background: url('img/play.png');
 }
 

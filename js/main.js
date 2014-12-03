@@ -2,6 +2,7 @@
   var container = $('#main');
   var header = $('#header');
   var footer = $('#footer');
+  var spinner = $('#spinner');
 
   var getWindowSize = function() {
     var width = $(window).width();
@@ -24,8 +25,29 @@
     height : 410
   }
 
-  var smallBoxTemplate = function(song, style) {
-    return '<div class="music-box small" style="position: absolute; top:' + style.top + 'px; left:' + style.left + 'px"><div class="overlay"><div class="player-status"><img src="img/play.png" /></div></div><div class="bottom"><div class="ranking">' + song.release_day + '</div><div class="song">' + song.user.username + '</div><div class="band">' + song.title + '</div><div class="dropdown"></div></div></div>';
+  // **** IMAGE SIZES FOR artwork_url ***********
+
+  // t500x500:     500px×500px
+  // crop:         400px×400px
+  // t300x300:     300px×300px
+  // large:        100px×100px  (default)
+  // t67x67:       67px×67px    (only on artworks)
+  // badge:        47px×47px
+  // small:        32px×32px
+  // tiny:         20px×20px    (on artworks)
+  // tiny:         18px×18px    (on avatars)
+  // mini:         16px×16px
+  // original:     originally uploaded image
+
+  var changeArtworkSize = function(url, image1, image2) {
+    if(url) {  
+      return url.replace(image1, image2);
+    }
+    return;
+  }
+
+  var smallBoxTemplate = function(song, style, ranking) {
+    return '<div class="music-box small" style="position: absolute; top:' + style.top + 'px; left:' + style.left + 'px"><img class="picture" src="' + changeArtworkSize(song.artwork_url, 'large.jpg', 't300x300.jpg') + '" /><div class="overlay" data-url="' + song.permalink_url + '"><div class="player-status"><img src="img/play.png" /></div></div><div class="bottom"><div class="ranking">' + (ranking + 1) + '</div><div class="song">' + song.user.username + '</div><div class="band">' + song.title + '</div><div class="dropdown"></div></div></div>';
   };
 
   var bigBoxTemplate = function(song, style) {
@@ -39,13 +61,15 @@
   var getSongs = function() {
     var apiKey = 'htuiRd1JP11Ww0X72T1C3g';
     var url = 'http://api.soundcloud.com/resolve.json?url=https://soundcloud.com/loringdodge/sets/wearehunted&client_id=' + apiKey;
+    
+    spinner.show();
+
     $.getJSON(url, function(songs) {
-      console.log(songs.tracks);
+      spinner.hide();
       arrangeBoxes(songs.tracks);
       slideEffect();
     });
   }
-
 
 
 
@@ -89,7 +113,7 @@
         'left' : leftPosition
       }
 
-      var template = smallBoxTemplate(song, boxPositionCSS);
+      var template = smallBoxTemplate(song, boxPositionCSS, index);
       topPosition += smallBoxDimensions.height;
 
       html += template;
@@ -188,7 +212,18 @@
 
   }
 
-// slideEffect();
+// **** GREAT SC PLAYER INFO ***********
+// https://github.com/soundcloud/soundcloud-custom-player/wiki#quick-start
+
+container.on('click', '.music-box .overlay', function() {
+  var link = $(this).data('url');
+  $('.sc-player').scPlayer({
+      autoPlay  :   true,
+      links: [{url: link}],
+  });
+});
+
+getSongs();
 
   // // Slide Effect
 
