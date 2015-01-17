@@ -7,107 +7,44 @@
 <link href='css/styles.css' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/sc-player-minimal.css" type="text/css" />
 
-<script src="bower_components/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src="js/soundcloud.player.api.js"></script>
-<script type="text/javascript" src="js/sc-player.js"></script>
-
 </head>
 
 <html>
 <body>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/handlebars/handlebars.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/backbone/backbone.js"></script>
+  <script type="text/javascript" src="js/soundcloud.player.api.js"></script>
+  <script type="text/javascript" src="js/sc-player.js"></script>
 
-  <div id="header">
-    <a class="soundcloud" href="http://www.soundcloud.com"><img src="img/soundcloud-logo.png" /></a>
-    <div class="left-nav">
-      <a href="#">Charts  <img class="icon" src="img/play.png" /></a>
-      <a href="#">Playlists <img class="icon" src="img/play.png" /></a>
-      <a href="#">Discovery</a>
-      <a href="#">Apps</a>
-      <a href="#">Search</a>
-    </div>
-    <div class="right-nav">
-      <a href="#">Create a playlist</a>
-      <a href="#">Sign in</a>
-      <a href="#">Feedback</a>
-      <a href="#">About <img class="icon" src="img/play.png" /></a>
-    </div>
-  </div>
+  <!-- Models -->
+  <script src="js/models/SongModel.js"></script>
+  <script src="js/models/AppModel.js"></script>
 
-  <div id="main">
-      <div id="spinner">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-   <!--  <div class="music-box small">
-      <div class="overlay">
-        <div class="player-status">
-          <img src="img/pause.png" />
-        </div>
-      </div>
-      <div class="bottom">
-        <div class="ranking">01</div>
-        <div class="song">Katy Perry</div>
-        <div class="band">I kissed a girl</div>
-        <div class="dropdown"></div>
-      </div>
-    </div>
-    <div class="music-box big">
-      <div class="overlay">
-        <div class="player-status">
-          <img src="img/play.png" />
-        </div>
-      </div>
-      <div class="bottom">
-        <div class="ranking">02</div>
-        <div class="song">Spice Girls</div>
-        <div class="band">Wannabe</div>
-        <div class="dropdown"></div>
-      </div>
-      <div class="banner">
-        <div class="text">Free <span>Download</span></div>
-      </div>
-    </div>
-    <div class="music-box small">
-      <div class="overlay">
-        <div class="player-status">
-          <img src="img/stop.png" />
-        </div>
-      </div>
-      <div class="bottom">
-        <div class="ranking">02</div>
-        <div class="song">Katy Perry</div>
-        <div class="band">I kissed a girl</div>
-        <div class="dropdown"></div>
-      </div>
-    </div>
-    <div class="music-box small">
-      <div class="overlay">
-        <div class="player-status">
-          <img src="img/play.png" />
-        </div>
-      </div>
-      <div class="bottom">
-        <div class="ranking">03</div>
-        <div class="song">Katy Perry</div>
-        <div class="band">I kissed a girl</div>
-        <div class="dropdown"></div>
-      </div>
-    </div> -->
-  </div>
-  <div id="footer">
-<!--     <div class="player-bar"></div> -->
-    <a href="" class="sc-player"></a>
-    <img class="logo" src="img/logo.png" />
-    <div class="player">
-<!--       <div class="song">Kath Perry</div>
-      <div class="artist">I kissed a girl</div>
-      <div class="bar"></div> -->
-    </div>
-  </div>
+  <!-- Collections -->
+  <script src="js/collections/PlaylistCollection.js"></script>
 
+  <!-- Views -->
+  <script src="js/views/FooterView.js"></script>
+  <script src="js/views/ContentView.js"></script>
+  <script src="js/views/HeaderView.js"></script>
+  <script src="js/views/PlayerView.js"></script>
+  <script src="js/views/PlaylistView.js"></script>
+  <script src="js/views/SongView.js"></script>
+  <script src="js/views/SpinnerView.js"></script>
+  <script src="js/views/AppView.js"></script>
 
-<script src="js/main.js"></script>
+  <script>
+    $(function(){
+      var app = new AppModel();
+
+      var appView = new AppView({model : app});
+
+      $('body').append(appView.render());
+
+    });
+  </script>
+
 </body>
 </html>
